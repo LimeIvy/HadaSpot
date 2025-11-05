@@ -1,0 +1,46 @@
+name: Continuous Integration
+
+# すべてのブランチへの push をトリガーに実行します
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    # Ubuntu の最新安定イメージで実行します
+    runs-on: ubuntu-latest
+    steps:
+      # リポジトリをクローン
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # pnpm をセットアップ
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8.6.0
+
+      # Node.js をセットアップ
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.0.0
+          cache: "pnpm"
+
+      # 依存関係をインストール
+      - name: Install dependencies
+        shell: bash
+        run: pnpm install
+
+      # ESLint による静的解析
+      - name: Lint
+        run: pnpm run lint
+
+      # Prettier によるフォーマット検査（`--check` で差分のみ検出）
+      - name: Format
+        run: pnpm run format
+
+      # TypeScript 型チェック
+      - name: Typecheck
+        run: pnpm run typecheck

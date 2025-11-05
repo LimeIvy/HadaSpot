@@ -1,0 +1,180 @@
+{
+  "editor.codeActionsOnSave": {
+    // ファイル保存時にESLintの自動修正を実行します
+    // formatOnSaveがtrueだと、保存時にPrettierが実行されるが、ESLintは実行されない。
+    // ESLintの自動修正を実行したい場合は、codeActionsOnSaveを設定する。
+    // https://qiita.com/keitaMax/items/f8af4bb1e7eccfd3bbc9
+    "source.fixAll.eslint": "explicit",
+    // インポート文の整理
+    "source.organizeImports": "never"
+  },
+
+  "editor.tabSize": 4,
+
+  // エディタの表示領域右端で折り返しをするかどうかの設定
+  // https://atmarkit.itmedia.co.jp/ait/articles/1807/27/news035.html
+  "editor.wordWrap": "on",
+
+  // 制御文字を表示
+  // https://astropengu.in/posts/2/
+  // https://code.visualstudio.com/updates/v1_62#_unicode-directional-formatting-characters
+  "editor.renderControlCharacters": true,
+
+  // フォーマッターを指定
+  // ここではPrettierをフォーマッターとして指定
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // ファイル保存時に自動でフォーマットを実行
+  // formatOnSaveがtrueだと、保存時にPrettierが実行されるが、ESLintは実行されない。
+  // ESLintの自動修正を実行したい場合は、codeActionsOnSaveを設定する。
+  "editor.formatOnSave": false,
+
+  // ESLint設定
+  "eslint.runtime": "node",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.useFlatConfig": true,
+
+  // Prettier設定
+  "prettier.ignorePath": ".gitignore",
+
+  // ファイル・フォルダの除外設定
+  "files.exclude": {
+    "**/.expo": true,
+    "**/.expo-shared": true,
+    "**/node_modules": false // エクスプローラーには表示したいのでfalse
+  },
+
+  // 検索から除外
+  "search.exclude": {
+    "**/.expo": true,
+    "**/.expo-shared": true,
+    "**/node_modules": true,
+    "**/ios": true,
+    "**/android": true,
+    "**/.git": true,
+    "**/dist": true,
+    "**/build": true
+  },
+
+  // ファイル監視から除外（パフォーマンス向上）
+  "files.watcherExclude": {
+    "**/.expo": true,
+    "**/.expo-shared": true,
+    "**/node_modules": true,
+    "**/ios": true,
+    "**/android": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/dist": true,
+    "**/build": true
+  },
+
+  // 自動保存
+  "files.autoSave": "onFocusChange",
+
+  // 末尾の空白を自動削除
+  "files.trimTrailingWhitespace": true,
+
+  // ファイル末尾に改行を挿入
+  "files.insertFinalNewline": true,
+
+  // ファイル末尾の余分な改行を削除
+  "files.trimFinalNewlines": true,
+
+  // TailwindCSSの補完対象を正規表現で指定
+  // https://zenn.dev/shon0/articles/2aa72060fb824d
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    // NativeWind対応
+    ["className\\s*=\\s*[\"']([^\"']*)[\"']", "([^\"']*)"],
+    ["class\\s*=\\s*[\"']([^\"']*)[\"']", "([^\"']*)"]
+  ],
+
+  // TailwindCSSの設定ファイルを指定
+  // https://qiita.com/tanimoto-hikari/items/0b188634b411eafe1c37
+  "tailwindCSS.experimental.configFile": "tailwind.config.ts",
+
+  // TailwindCSSのインテリセンスを有効化する言語
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+
+  // IntelliSenseのTypeScriptを使用する場合、ユーザーへ確認するように設定
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  // TypeScriptのバージョンとして、プロジェクトのnode_modulesディレクトリにインストールされたものを使用
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  // TypeScriptの自動インポート設定
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // JavaScript/TypeScript向けの設定
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // Emmet設定（React Native用）
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+
+  // クイックサジェストを文字列内でも表示
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  // ブレッドクラムを表示
+  "breadcrumbs.enabled": true,
+
+  // ミニマップを表示
+  "editor.minimap.enabled": true,
+
+  // Git設定
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+
+  // ターミナル設定（Windows向け）
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    }
+  },
+
+  // ファイルの関連付け
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.json": "jsonc"
+  },
+
+  // コードレンズ（参照数などを表示）
+  "editor.codeLens": true,
+
+  // インレイヒント（型情報などを表示）
+  "editor.inlayHints.enabled": "on",
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+
+  // コード補完の設定
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnCommitCharacter": true,
+
+  // パフォーマンス向上のための設定
+  "extensions.ignoreRecommendations": false,
+  "workbench.editor.enablePreview": false,
+
+  // セマンティックハイライト
+  "editor.semanticHighlighting.enabled": true
+}

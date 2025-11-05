@@ -1,0 +1,57 @@
+{
+  "name": "react-native-expo-templete",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "clean": "git clean -xdf .cache .expo android ios node_modules",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --check \"**/*.{ts,tsx,js,jsx,cjs,mjs,md,json,lintstagedrc}\"",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx,cjs,mjs,md,json,lintstagedrc}\"",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "~6.1.2",
+    "expo": "~54.0.22",
+    "expo-status-bar": "~3.0.8",
+    "nativewind": "5.0.0-preview.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-css": "^3.0.1",
+    "react-native-reanimated": "^4.1.3",
+    "react-native-safe-area-context": "^5.6.2",
+    "react-native-web": "^0.21.0"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
+    "@tailwindcss/postcss": "^4.1.16",
+    "@types/eslint": "^9.6.1",
+    "@types/react": "~19.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "@typescript-eslint/parser": "^8.46.3",
+    "eslint": "^9.39.1",
+    "eslint-config-expo": "~10.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
+    "tailwindcss": "^4.1.16",
+    "typescript": "~5.9.2"
+  },
+  "private": true,
+  "pnpm": {
+    "overrides": {
+      "lightningcss": "1.30.1"
+    }
+  }
+}
