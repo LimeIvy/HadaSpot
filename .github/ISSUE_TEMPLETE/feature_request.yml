@@ -1,0 +1,51 @@
+name: 機能追加・改修
+description: 新しい機能の提案や既存機能の改善を行います
+title: 'Feature: '
+body:
+  # 1. 目的と概要
+  - type: textarea
+    id: objective_summary
+    attributes:
+      label: 🎯 目的と概要
+      description: |
+        このIssueで何を達成するのか、その目的を簡潔に記載してください。
+        （例:
+        - フォーム送信時のUXを改善するため、ローディングスピナーコンポーネントを追加する。
+        - ページタイトルが古いため、最新の情報に修正する。
+        ）
+    validations:
+      required: true
+
+  # 2. 作業内容・詳細
+  - type: textarea
+    id: work_details
+    attributes:
+      label: ⚙️ 実施する具体的な作業内容
+      description: |
+        実装者が実際に行う作業内容を具体的に記載してください。（変更ファイル、修正箇所など）
+        変更前後のテキストや、デザイン差分など、具体的な情報があるとスムーズです。
+    validations:
+      required: true
+
+  # 3. 完了条件 (Definition of Done) - 最小限の確認
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: ✅ 完了とするための条件
+      description: |
+        この作業が完了したと判断できる条件（簡単なテスト項目）を記載してください。
+        （例:
+        - 〇〇ページで、新しく追加したコンポーネントが表示されていること。
+        - 修正後の文言（「~~」）が正しく反映されていること。
+        ）
+    validations:
+      required: true
+
+  # 4. 関連情報
+  - type: input
+    id: related_info
+    attributes:
+      label: 🔗 関連情報・参考URL
+      description: 関連するデザイン資料や、参照した既存のIssueなどを記載してください。
+    validations:
+      required: false
