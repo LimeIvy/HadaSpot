@@ -66,6 +66,9 @@ export default [
       // @see https://typescript-eslint.io/rules/array-type
       "@typescript-eslint/array-type": "off",
 
+      // 動的依存の呼び出しなどで誤検出が多いため無効化
+      "@typescript-eslint/no-unsafe-call": "off",
+
       // @see https://typescript-eslint.io/rules/consistent-type-definitions/
       "@typescript-eslint/consistent-type-definitions": "off",
 
@@ -105,6 +108,24 @@ export default [
   // Metro設定ファイルのルールを緩和
   {
     files: ["metro.config.js", "babel.config.js"],
+    rules: {
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+      "@typescript-eslint/no-require-imports": "off",
+    },
+  },
+  // テストファイルの設定
+  {
+    files: ["**/__tests__/**/*.ts", "**/*.test.ts", "**/*.spec.ts"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.jest,
+      },
+    },
     rules: {
       "@typescript-eslint/no-unsafe-call": "off",
       "@typescript-eslint/no-unsafe-assignment": "off",
