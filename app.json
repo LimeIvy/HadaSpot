@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-expo-templete",
-    "slug": "react-native-expo-templete",
+    "name": "hada-spot",
+    "slug": "hada-spot",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
