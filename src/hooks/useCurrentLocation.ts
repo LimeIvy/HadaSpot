@@ -15,14 +15,14 @@ function useCurrentLocation() {
     longitude: null,
   });
 
-  const [error, setError] = useState<string | null>(null);
+  const [locationError, setLocationError] = useState<string | null>(null);
 
   useEffect(() => {
     void (async () => {
       // 位置情報を使ってよいかの判定を返す
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== PermissionStatus.GRANTED) {
-        setError("Permission to access location was denied");
+        setLocationError("Permission to access location was denied");
         return;
       }
 
@@ -35,7 +35,7 @@ function useCurrentLocation() {
     })();
   }, []);
 
-  return { currentLocation, error };
+  return { currentLocation, locationError };
 }
 
 export default useCurrentLocation;
