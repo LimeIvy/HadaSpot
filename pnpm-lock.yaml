@@ -26,6 +26,9 @@ importers:
       expo:
         specifier: ~54.0.22
         version: 54.0.22(@babel/core@7.28.5)(@expo/metro-runtime@6.1.2)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0)
+      expo-location:
+        specifier: ~19.0.7
+        version: 19.0.7(expo@54.0.22)
       expo-status-bar:
         specifier: ~3.0.8
         version: 3.0.8(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0)
@@ -2450,6 +2453,11 @@ packages:
     peerDependencies:
       expo: '*'
       react: '*'
+
+  expo-location@19.0.7:
+    resolution: {integrity: sha512-YNkh4r9E6ECbPkBCAMG5A5yHDgS0pw+Rzyd0l2ZQlCtjkhlODB55nMCKr5CZnUI0mXTkaSm8CwfoCO8n2MpYfg==}
+    peerDependencies:
+      expo: '*'
 
   expo-modules-autolinking@3.0.20:
     resolution: {integrity: sha512-W4XFE/A2ijrqvXYrwXug+cUQl6ALYKtsrGnd+xdnoZ+yC7HZag45CJ9mXR0qfLpwXxuBu0HDFh/a+a1MD0Ppdg==}
@@ -7962,6 +7970,10 @@ snapshots:
     dependencies:
       expo: 54.0.22(@babel/core@7.28.5)(@expo/metro-runtime@6.1.2)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0)
       react: 19.1.0
+
+  expo-location@19.0.7(expo@54.0.22):
+    dependencies:
+      expo: 54.0.22(@babel/core@7.28.5)(@expo/metro-runtime@6.1.2)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.17)(react@19.1.0))(react@19.1.0)
 
   expo-modules-autolinking@3.0.20:
     dependencies:

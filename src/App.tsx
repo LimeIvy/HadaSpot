@@ -1,24 +1,26 @@
-import { StyleSheet, Text, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
+import { Text, View } from "react-native";
+
+import useCurrentLocation from "./hooks/useCurrentLocation";
 
 const App = () => {
+  const { currentLocation, error } = useCurrentLocation();
   return (
-    <View style={styles.container}>
-      <Text className="text-red-500">
-        Open up app.tsx to start working on your app!
-      </Text>
-      <StatusBar style="auto" />
+    <View className="flex-1 items-center justify-center bg-white">
+      <View className="w-full px-4">
+        <View className="flex flex-col items-center gap-2">
+          <Text className="text-center text-black">
+            Latitude: {currentLocation.latitude}
+          </Text>
+          <Text className="text-center text-black">
+            Longitude: {currentLocation.longitude}
+          </Text>
+          {error && (
+            <Text className="text-center text-red-500">Error: {error}</Text>
+          )}
+        </View>
+      </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 export default App;
