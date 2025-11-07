@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import * as Location from "expo-location";
-import { PermissionStatus } from "expo-modules-core";
+import { PermissionStatus } from "expo-location";
 
 // 現在地の緯度経度情報の型定義
 type LocationType = {
