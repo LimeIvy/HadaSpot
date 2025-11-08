@@ -5,10 +5,10 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 
-import Compare from "./components/Compare";
-import History from "./components/History";
-import Map from "./components/Map";
-import Settings from "./components/Settings";
+import Compare from "./features/compare/Compare";
+import History from "./features/history/History";
+import Map from "./features/map/Map";
+import Settings from "./features/settings/Settings";
 
 const Tab = createBottomTabNavigator();
 

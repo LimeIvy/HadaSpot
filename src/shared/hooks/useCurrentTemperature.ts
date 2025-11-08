@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getCurrentTemperature } from "../services/weatherService";
+import { getCurrentTemperature } from "../utils/weatherService";
 
 // 現在の気温を取得するカスタムフック
 function useCurrentTemperature(

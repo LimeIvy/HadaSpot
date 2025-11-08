@@ -1,7 +1,7 @@
 import * as Location from "expo-location";
 import { renderHook, waitFor } from "@testing-library/react-native";
 
-import useCurrentAddress from "../useCurrentAddress";
+import useCurrentAddress from "../hooks/useCurrentAddress";
 
 jest.mock("expo-location", () => ({
   reverseGeocodeAsync: jest.fn(),

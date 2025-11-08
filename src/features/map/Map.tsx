@@ -2,11 +2,11 @@ import { useRef } from "react";
 import { Text, View } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 
-import useCurrentAddress from "../hooks/useCurrentAddress";
-import useCurrentLocation from "../hooks/useCurrentLocation";
-import useCurrentTemperature from "../hooks/useCurrentTemperature";
-import { customMapStyle } from "../utils/mapStyles";
-import MapButton from "./MapButton";
+import useCurrentAddress from "../../shared/hooks/useCurrentAddress";
+import useCurrentLocation from "../../shared/hooks/useCurrentLocation";
+import useCurrentTemperature from "../../shared/hooks/useCurrentTemperature";
+import MapButton from "./components/MapButton";
+import { customMapStyle } from "./utils/mapStyles";
 
 const Map = () => {
   const mapRef = useRef<MapView>(null);

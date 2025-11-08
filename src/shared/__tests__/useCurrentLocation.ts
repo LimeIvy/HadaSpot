@@ -2,7 +2,7 @@ import * as Location from "expo-location";
 import { PermissionStatus } from "expo-location";
 import { renderHook, waitFor } from "@testing-library/react-native";
 
-import useCurrentLocation from "../useCurrentLocation";
+import useCurrentLocation from "../hooks/useCurrentLocation";
 
 jest.mock("expo-location", () => ({
   requestForegroundPermissionsAsync: jest.fn(),
